@@ -7,12 +7,13 @@
     <link rel="stylesheet" type="text/css" href="./styles.css">
 </head>
 
+<div id="wrapper">
 
 <body>
     <header>
-        <nav class="navigation">
+        <nav class="navbar">
         <p id="main-title">Nico's Cheat Sheet</p>
-            <ul>
+            <ul class="navlinks">
                 <li><a href="#html-section">html</a></li>
                 <li><a href="#css-section">css</a></li>
             </ul>
@@ -287,65 +288,62 @@
 
         <section id="css-section"> <!--CSS Section-->
             <h1>CSS</h1>
-            <h2>Basic CSS Tags</h2> 
-            <table> <!-- HTML Tags-->
+            <h2>Basic CSS </h2> 
+            <table> <!-- CSS Tags-->
                 <thead>
-                    <th class="col1">Tag</th>
-                    <th class="col2">Name</th>
+                    <th class="col1">Selection</th>
+                    <th class="col2">Syntax</th>
+                    <th>In between</th>
                     <th>Description</th>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><span class="code">&lt;div&gt;</span></td>
-                        <td>Division</td>
-                        <td>Perfect for custom styles. Allow to group HTML elements.</td>
+                        <td>Chaining</td>
+                        <td><code>p.time</code></td>
+                        <td>dot</td>
+                        <td>Rule applied to elements that are both <code>p</code> and <code>.time</code>. Styles <emph>elements</emph> with a specific <emph>class</emph>.</td>
                     </tr>
                     <tr>
-                        <td><span class="code">&lt;span&gt;</span></td>
-                        <td>Span</td>
-                        <td>For short pieces of text. Used to separate small pieces of content that are on the same line as other content.</td>
+                        <td>Multiple selectors</td>
+                        <td><code>p, .time</code></td>
+                        <td>comma</td>
+                        <td>Styles <emph>all <code>p</code></emph> and <emph>all <code>.time</code></emph>.</td>
                     </tr>
                     <tr>
-                        <td><span class="code">&lt;ol&gt;</span> &<br><span class="code">&lt;ul&gt;</span></td>
-                        <td>Ordered List & Unordered List</td>
-                        <td>Lists with numbers or bullet points. <br>
-                            Contain List Elements <span class="code">&lt;li&gt;</span>.</td>
+                        <td>Descendent combinator</td>
+                        <td><code>.main-list li</code></td>
+                        <td>space</td>
+                        <td>Styles <code>li</code> elements inside <code>.main-list</code>. Styles elements <emph>nested inside</emph> a specific class.</td>
                     </tr>
                     <tr>
-                        <td><span class="code">&lt;a&gt;</span></td>
-                        <td>Anchor</td>
-                        <td>Creates anchors and links.<br>
-                            <span class="code">href</span> defines the destination of the link (to URL, local file or in page anchor with <span class="code">#</span>).<br>
-                            <span class="code">target</span> defines how the link opens. <span class="code">target="_blank"</span> opens the link a new window.<br>
-                        </td>
+                        <td>Child combinator</td>
+                        <td><code>.nav &lt; li</code></td>
+                        <td>&lt;</td>
+                        <td>Selects nodes that are direct children of the first element.</td>
                     </tr>
                     <tr>
-                        <td><span class="code">&lt;img&gt;</span></td>
-                        <td>Image</td>
-                        <td>Adds an image. Self-closing Tag.<br>
-                            <span class="code">src</span>: Image source (URL or local). Required attribute.<br>
-                            <span class="code">alt</span>: Alternate text.<br>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><span class="code">&lt;video&gt;</span></td>
-                        <td>Video</td>
-                        <td>Adds a video.<br>
-                            <span class="code">src</span>: Video source (URL or local). Required attribute. <br>
-                            <span class="code">width</span>, <span class="code">height</span> and <span class="code">controls</span> are optional attributes<br>
-                        </td>
+                        <td>Adjacent sibling combinator</td>
+                        <td><code>li+li</code></td>
+                        <td>+</td>
+                        <td>Only select two <code>li</code> when they are immediately next to each other, with the same parent. The element that actually gets selected is the second element of this sibling pair.</td>
                     </tr>
                 </tbody>
             </table>
+            <p>
+                There are many more CSS selectors like <code>::before</code>, <code>::first-letter</code>, and <code>:last-child</code>, etc. (note the single or double "<code>:</code>")
+                <br> More on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors" target="_blank">MDN</a> and <a href="https://www.w3schools.com/cssref/css_selectors.php" target="_blank">W3</a>.
+            </p>
         </section>
     
     </main>
     
     <footer>
         <div>
-            <p>Thanks to Jamie Aura, another Codecademy student, for the insipration of <a href="https://jraura.github.io/codecademy-cheatsheet/" target="_blank">her cheatsheet</a></p>
+            <p>Thanks to Jamie Aura, another Codecademy student, for the insipration of <a href="https://jraura.github.io/codecademy-cheatsheet/" target="_blank">her cheatsheet</a>.</p>
         </div>
     </footer>
 
 
-</body></html>
+</body>
+</div> <!-- end #wrapper -->
+</html>
